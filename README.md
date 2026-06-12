@@ -8,8 +8,6 @@ E possivel executar a atividade sem uma conta AWS usando o Terraform Sandbox da 
 
 Ponto importante: essa execucao nao cria recursos reais na AWS publica. Ela cria recursos simulados no ambiente sandbox. Para provisionar uma instancia EC2 real, ainda e necessario usar uma conta AWS e credenciais validas.
 
-![Verificacao do sandbox](docs/images/01-sandbox.svg)
-
 ## Arquivos do projeto
 
 - `terraform.tf`: define versao minima do Terraform e provider `hashicorp/aws`.
@@ -29,6 +27,8 @@ cd ponderada_terraform
 
 Proposito: baixar o codigo Terraform que descreve a infraestrutura como codigo.
 
+![Clone do repositorio no sandbox](docs/images/01-clone-repositorio-sandbox.png)
+
 ### 2. Inicializar o Terraform
 
 ```bash
@@ -36,6 +36,8 @@ terraform init
 ```
 
 Proposito: baixar o provider AWS e preparar o diretorio de trabalho.
+
+![Terraform init](docs/images/02-terraform-init.png)
 
 ### 3. Validar a configuracao
 
@@ -45,7 +47,7 @@ terraform validate
 
 Proposito: conferir se os arquivos `.tf` estao corretos antes de criar recursos.
 
-![Init e validate](docs/images/02-init-validate.svg)
+![Terraform validate](docs/images/03-terraform-validate.png)
 
 ### 4. Gerar o plano de execucao
 
@@ -57,19 +59,23 @@ Proposito: visualizar o que o Terraform pretende criar antes de aplicar mudancas
 
 Resultado obtido: o plano indicou `1 to add, 0 to change, 0 to destroy`.
 
-![Terraform plan](docs/images/03-plan.svg)
+![Terraform plan](docs/images/04-terraform-plan.png)
 
 ### 5. Aplicar a infraestrutura
 
 ```bash
-terraform apply -auto-approve
+terraform apply
 ```
 
 Proposito: executar o plano e provisionar a instancia EC2 no ambiente configurado.
 
-Resultado obtido: o Terraform criou `aws_instance.app_server` com sucesso.
+Ao ser solicitado, foi digitado `yes` para confirmar a criacao dos recursos.
 
-![Terraform apply](docs/images/04-apply.svg)
+![Plano do Terraform apply](docs/images/05-terraform-apply-plano.png)
+
+Resultado obtido: o Terraform criou `aws_instance.app_server` com sucesso. A instancia simulada recebeu o ID `i-d88616e6833976a8f`.
+
+![Terraform apply completo](docs/images/06-terraform-apply-completo.png)
 
 ### 6. Inspecionar o estado e os recursos
 
@@ -80,24 +86,35 @@ terraform show -no-color
 
 Proposito: confirmar quais recursos estao sendo gerenciados pelo Terraform.
 
-Tambem foi usada a AWS CLI apontando para o LocalStack:
+![Terraform state list](docs/images/07-terraform-state-list.png)
+
+O comando `terraform show` exibiu os detalhes da instancia provisionada no sandbox, incluindo ID, AMI, tipo, estado, IPs simulados, subnet, interface de rede e tag.
+
+![Terraform show](docs/images/08-terraform-show.png)
+
+Tambem foi usada a AWS CLI dentro do sandbox:
 
 ```bash
-AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=us-west-2 \
-aws --endpoint-url=http://localhost:4566 ec2 describe-instances
+aws ec2 describe-instances --output table
 ```
 
-![Estado e evidencia no LocalStack](docs/images/05-state-cloud.svg)
+![AWS CLI describe instances](docs/images/09-aws-cli-describe-instances.png)
 
 ### 7. Destruir a infraestrutura
 
 ```bash
-terraform destroy -auto-approve
+terraform destroy
 ```
 
 Proposito: remover os recursos criados e evitar manter infraestrutura ativa.
 
-![Terraform destroy](docs/images/06-destroy.svg)
+Ao ser solicitado, foi digitado `yes` para confirmar a destruicao dos recursos.
+
+![Plano do Terraform destroy](docs/images/10-terraform-destroy-plano.png)
+
+Resultado obtido: o Terraform removeu a instancia criada.
+
+![Terraform destroy completo](docs/images/11-terraform-destroy-completo.png)
 
 ## Itens provisionados
 
@@ -112,7 +129,7 @@ Evidencia principal:
 
 - `terraform state list` retornou `aws_instance.app_server`.
 - `terraform show` exibiu `instance_state = "running"`.
-- `aws ec2 describe-instances` exibiu a instancia `i-4dedc56c8e1b1c0d7` com estado `running`.
+- `terraform show` exibiu a instancia `i-d88616e6833976a8f` com tipo `t2.micro`, AMI `ami-12345678` e tag `Name=learn-terraform`.
 
 ## Como executar em AWS real
 
