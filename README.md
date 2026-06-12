@@ -1,12 +1,11 @@
 # Ponderada Terraform
+***Essa atividade conteve uso de IA generativa para auxilio na documentação***
 
 Atividade baseada no tutorial oficial [Create infrastructure - Terraform AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-create), com adaptação para execução no [Terraform Sandbox](https://developer.hashicorp.com/terraform/sandbox) da HashiCorp.
 
 ## Verificacao sobre uso do sandbox
 
 E possivel executar a atividade sem uma conta AWS usando o Terraform Sandbox da HashiCorp. O sandbox ja vem com Terraform, Docker, LocalStack e AWS CLI instalados. Nesse modo, o Terraform conversa com o LocalStack, que emula APIs da AWS localmente.
-
-Ponto importante: essa execucao nao cria recursos reais na AWS publica. Ela cria recursos simulados no ambiente sandbox. Para provisionar uma instancia EC2 real, ainda e necessario usar uma conta AWS e credenciais validas.
 
 ## Arquivos do projeto
 
@@ -130,24 +129,3 @@ Evidencia principal:
 - `terraform state list` retornou `aws_instance.app_server`.
 - `terraform show` exibiu `instance_state = "running"`.
 - `terraform show` exibiu a instancia `i-d88616e6833976a8f` com tipo `t2.micro`, AMI `ami-12345678` e tag `Name=learn-terraform`.
-
-## Como executar em AWS real
-
-Para criar uma instancia EC2 real na AWS publica:
-
-1. Remova ou renomeie o arquivo `localstack_override.tf`.
-2. Configure credenciais AWS validas.
-3. Execute com a consulta real de AMI habilitada:
-
-```bash
-export AWS_ACCESS_KEY_ID="sua_access_key"
-export AWS_SECRET_ACCESS_KEY="sua_secret_key"
-export AWS_DEFAULT_REGION="us-west-2"
-terraform apply -var='use_localstack=false'
-```
-
-Nesse modo, o Terraform usa o data source `aws_ami.ubuntu` para buscar a AMI Ubuntu mais recente na AWS.
-
-## Observacao sobre a adaptacao
-
-O tutorial oficial busca dinamicamente uma AMI Ubuntu na AWS. No LocalStack, essa consulta nao retorna o catalogo publico de AMIs. Por isso, a configuracao usa `ami-12345678` quando `use_localstack = true` e mantem a consulta dinamica quando `use_localstack = false`.
