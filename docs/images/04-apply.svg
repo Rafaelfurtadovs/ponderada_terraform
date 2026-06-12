@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560">
+  <rect width="1180" height="560" rx="12" fill="#111827"/>
+  <rect x="0" y="0" width="1180" height="44" rx="12" fill="#1f2937"/>
+  <circle cx="24" cy="22" r="7" fill="#ef4444"/>
+  <circle cx="48" cy="22" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="22" r="7" fill="#22c55e"/>
+  <text x="96" y="28" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">terraform apply</text>
+  <text x="28" y="82" fill="#34d399" font-family="Menlo, Consolas, monospace" font-size="18">$ terraform apply -auto-approve</text>
+  <text x="28" y="130" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">aws_instance.app_server: Creating...</text>
+  <text x="28" y="174" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">aws_instance.app_server: Still creating... [00m10s elapsed]</text>
+  <text x="28" y="218" fill="#22c55e" font-family="Menlo, Consolas, monospace" font-size="18">aws_instance.app_server: Creation complete after 10s [id=i-4dedc56c8e1b1c0d7]</text>
+  <text x="28" y="278" fill="#22c55e" font-family="Menlo, Consolas, monospace" font-size="18">Apply complete! Resources: 1 added, 0 changed, 0 destroyed.</text>
+  <text x="28" y="340" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">Outputs:</text>
+  <text x="58" y="384" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">ami_id        = "ami-12345678"</text>
+  <text x="58" y="424" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">instance_id   = "i-4dedc56c8e1b1c0d7"</text>
+  <text x="58" y="464" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">instance_type = "t2.micro"</text>
+</svg>

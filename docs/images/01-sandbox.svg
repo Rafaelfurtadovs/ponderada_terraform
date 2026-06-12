@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="430" viewBox="0 0 1180 430">
+  <rect width="1180" height="430" rx="12" fill="#111827"/>
+  <rect x="0" y="0" width="1180" height="44" rx="12" fill="#1f2937"/>
+  <circle cx="24" cy="22" r="7" fill="#ef4444"/>
+  <circle cx="48" cy="22" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="22" r="7" fill="#22c55e"/>
+  <text x="96" y="28" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">Verificacao do sandbox HashiCorp</text>
+  <text x="28" y="82" fill="#34d399" font-family="Menlo, Consolas, monospace" font-size="18">$ consulta na documentacao oficial</text>
+  <text x="28" y="124" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">Terraform Sandbox: ambiente interativo no navegador.</text>
+  <text x="28" y="164" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">Ferramentas pre-instaladas: Terraform, Docker, LocalStack e AWS CLI.</text>
+  <text x="28" y="204" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">LocalStack emula APIs AWS e permite testar Terraform sem credenciais reais.</text>
+  <text x="28" y="244" fill="#fbbf24" font-family="Menlo, Consolas, monospace" font-size="18">Conclusao: e possivel executar sem conta AWS, mas a infraestrutura e simulada.</text>
+  <text x="28" y="284" fill="#fbbf24" font-family="Menlo, Consolas, monospace" font-size="18">Para criar recursos na AWS publica, ainda e necessario usar conta e credenciais AWS.</text>
+  <text x="28" y="350" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="18">Fonte: https://developer.hashicorp.com/terraform/sandbox</text>
+</svg>

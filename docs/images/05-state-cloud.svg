@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="650" viewBox="0 0 1180 650">
+  <rect width="1180" height="650" rx="12" fill="#111827"/>
+  <rect x="0" y="0" width="1180" height="44" rx="12" fill="#1f2937"/>
+  <circle cx="24" cy="22" r="7" fill="#ef4444"/>
+  <circle cx="48" cy="22" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="22" r="7" fill="#22c55e"/>
+  <text x="96" y="28" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">state list e evidencia LocalStack</text>
+  <text x="28" y="82" fill="#34d399" font-family="Menlo, Consolas, monospace" font-size="18">$ terraform state list</text>
+  <text x="28" y="124" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">aws_instance.app_server</text>
+  <text x="28" y="184" fill="#34d399" font-family="Menlo, Consolas, monospace" font-size="18">$ terraform show -no-color</text>
+  <text x="28" y="226" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">id             = "i-4dedc56c8e1b1c0d7"</text>
+  <text x="28" y="266" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">instance_state = "running"</text>
+  <text x="28" y="306" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">instance_type  = "t2.micro"</text>
+  <text x="28" y="346" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">tags           = { "Name" = "learn-terraform" }</text>
+  <text x="28" y="406" fill="#34d399" font-family="Menlo, Consolas, monospace" font-size="18">$ aws --endpoint-url=http://localhost:4566 ec2 describe-instances</text>
+  <text x="28" y="454" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">ImageId      ami-12345678</text>
+  <text x="28" y="494" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">InstanceId   i-4dedc56c8e1b1c0d7</text>
+  <text x="28" y="534" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">InstanceType t2.micro</text>
+  <text x="28" y="574" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">Name         learn-terraform</text>
+  <text x="28" y="614" fill="#22c55e" font-family="Menlo, Consolas, monospace" font-size="18">State        running</text>
+</svg>

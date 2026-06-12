@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560">
+  <rect width="1180" height="560" rx="12" fill="#111827"/>
+  <rect x="0" y="0" width="1180" height="44" rx="12" fill="#1f2937"/>
+  <circle cx="24" cy="22" r="7" fill="#ef4444"/>
+  <circle cx="48" cy="22" r="7" fill="#f59e0b"/>
+  <circle cx="72" cy="22" r="7" fill="#22c55e"/>
+  <text x="96" y="28" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">terraform plan</text>
+  <text x="28" y="82" fill="#34d399" font-family="Menlo, Consolas, monospace" font-size="18">$ terraform plan</text>
+  <text x="28" y="126" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">Terraform will perform the following actions:</text>
+  <text x="28" y="174" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18"># aws_instance.app_server will be created</text>
+  <text x="28" y="214" fill="#22c55e" font-family="Menlo, Consolas, monospace" font-size="18">+ resource "aws_instance" "app_server" {</text>
+  <text x="58" y="254" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">+ ami           = "ami-12345678"</text>
+  <text x="58" y="294" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">+ instance_type = "t2.micro"</text>
+  <text x="58" y="334" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="18">+ tags = { Name = "learn-terraform" }</text>
+  <text x="28" y="374" fill="#22c55e" font-family="Menlo, Consolas, monospace" font-size="18">}</text>
+  <text x="28" y="434" fill="#fbbf24" font-family="Menlo, Consolas, monospace" font-size="18">Plan: 1 to add, 0 to change, 0 to destroy.</text>
+  <text x="28" y="488" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="18">Outputs previstos: ami_id, instance_id e instance_type.</text>
+</svg>
